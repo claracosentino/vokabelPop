@@ -21,10 +21,10 @@ jobs:
       - name: Test logic
         run: python -I test_core.py
 
-      - name: Build exe
+      - name: Build exe (single file)
         run: >
-          python -m PyInstaller --noconfirm --onefile --windowed --name Vokabel-Pop
-          --distpath dist
+          python -m PyInstaller --noconfirm --clean --onefile --windowed --name Vokabel-Pop
+          --distpath dist_onefile
           --add-data "vocab.json;."
           --add-data "control.html;." --add-data "control.css;." --add-data "control.js;."
           --add-data "banner.html;." --add-data "banner.css;." --add-data "banner.js;."
@@ -32,15 +32,63 @@ jobs:
           --collect-all webview --collect-all pythonnet
           app.py
 
-      - name: Check exe exists
+      - name: Build folder (onedir)
+        run: >
+          python -m PyInstaller --noconfirm --clean --onedir --windowed --name Vokabel-Pop
+          --distpath dist_onedir
+          --add-data "vocab.json;."
+          --add-data "control.html;." --add-data "control.css;." --add-data "control.js;."
+          --add-data "banner.html;." --add-data "banner.css;." --add-data "banner.js;."
+          --add-data "style.css;." --add-data "speak.js;."
+          --collect-all webview --collect-all pythonnet
+          app.py
+
+      - name: Check both builds
         shell: pwsh
         run: |
-          if (-not (Test-Path dist/Vokabel-Pop.exe)) { Write-Error "Vokabel-Pop.exe non trovato"; exit 1 }
-          "{0:N1} MB" -f ((Get-Item dist/Vokabel-Pop.exe).Length / 1MB)
+          $exe = "dist_onefile\Vokabel-Pop.exe"
+          $folder = "dist_onedir\Vokabel-Pop\Vokabel-Pop.exe"
+          if (-not (Test-Path $exe)) { Write-Error "Single-file exe non trovato"; exit 1 }
+          if (-not (Test-Path $folder)) { Write-Error "Folder exe non trovato"; exit 1 }
+          Write-Host "Single-file: $([Math]::Round((Get-Item $exe).Length / 1MB, 1)) MB"
+          Write-Host "Folder: $([Math]::Round((Get-Item $folder).Length / 1MB, 1)) MB"
 
-      - uses: actions/upload-artifact@v4
+      - name: Launch check - single file
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          $env:VOKABEL_PORT = "47989"
+          $env:VOKABEL_PROGRESS = Join-Path $env:RUNNER_TEMP "progress.json"
+          $p = Start-Process -FilePath "dist_onefile\Vokabel-Pop.exe" -ArgumentList "--now" -PassThru
+          Start-Sleep -Seconds 20
+          if ($p.HasExited) { Write-Host "ERRORE: exe (onefile) si e' chiuso, codice $($p.ExitCode)"; exit 1 }
+          Write-Host "OK: exe (onefile) ancora in esecuzione dopo 20 secondi"
+          taskkill /PID $p.Id /T /F | Out-Null
+
+      - name: Launch check - folder
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          $env:VOKABEL_PORT = "47990"
+          $env:VOKABEL_PROGRESS = Join-Path $env:RUNNER_TEMP "progress.json"
+          $p = Start-Process -FilePath "dist_onedir\Vokabel-Pop\Vokabel-Pop.exe" -ArgumentList "--now" -PassThru
+          Start-Sleep -Seconds 20
+          if ($p.HasExited) { Write-Host "ERRORE: exe (onedir) si e' chiuso, codice $($p.ExitCode)"; exit 1 }
+          Write-Host "OK: exe (onedir) ancora in esecuzione dopo 20 secondi"
+          taskkill /PID $p.Id /T /F | Out-Null
+
+      - name: Upload single-file exe
+        uses: actions/upload-artifact@v4
         with:
-          name: Vokabel-Pop-exe
-          path: dist/Vokabel-Pop.exe
+          name: Vokabel-Pop-exe-single
+          path: dist_onefile/Vokabel-Pop.exe
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: Vokabel-Pop-folder
+          path: dist_onedir/Vokabel-Pop/
           if-no-files-found: error
           retention-days: 30
