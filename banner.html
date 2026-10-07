@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Vokabel-Pop</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="banner.css">
+</head>
+<body>
+<main class="card" id="card" aria-live="polite">
+
+  <header class="top">
+    <span class="meta" id="meta"></span>
+    <button class="close" id="close" aria-label="Chiudi">
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3.5 3.5l9 9m0-9l-9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+    </button>
+  </header>
+
+  <!-- domanda -->
+  <section id="question">
+    <p class="eyebrow" id="eyebrow"></p>
+    <h1 class="prompt" id="prompt"></h1>
+    <p class="note" id="note"></p>
+
+    <div class="choices" id="choices"></div>
+
+    <form class="typed" id="typed" autocomplete="off">
+      <input id="answer" type="text" spellcheck="false" aria-label="La tua risposta" placeholder="Scrivi la risposta">
+      <button class="btn primary" type="submit">Verifica</button>
+    </form>
+
+    <div class="tools" id="tools">
+      <button class="link" id="hint" type="button">Aiutino</button>
+      <button class="link" id="dunno" type="button">Non lo so</button>
+      <span class="hinttext" id="hinttext"></span>
+    </div>
+
+    <footer class="foot">
+      <button class="link" id="later" type="button">Più tardi</button>
+      <button class="link" id="skip" type="button">Salta</button>
+    </footer>
+  </section>
+
+  <!-- risposta -->
+  <section id="result" hidden>
+    <p class="verdict" id="verdict"></p>
+    <p class="given" id="given"></p>
+    <p class="problem" id="problem"></p>
+
+    <div class="answer">
+      <h2 class="de" id="de"></h2>
+      <p class="extra" id="extra"></p>
+      <p class="it" id="it"></p>
+    </div>
+
+    <aside class="tip" id="tip">
+      <p class="tip-label">Per ricordarla</p>
+      <p class="tip-text" id="tiptext"></p>
+    </aside>
+
+    <footer class="foot end">
+      <button class="link listen" id="listen" type="button">Ascolta</button>
+      <button class="btn primary" id="ok" type="button">Ok</button>
+    </footer>
+  </section>
+
+</main>
+<script src="speak.js"></script>
+<script src="banner.js"></script>
+</body>
+</html>

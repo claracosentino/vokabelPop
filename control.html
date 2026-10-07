@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Vokabel-Pop</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="control.css">
+</head>
+<body>
+<main class="app">
+
+  <header class="bar">
+    <h1>Vokabel-Pop</h1>
+    <nav class="tabs" role="tablist" aria-label="Sezioni">
+      <button role="tab" id="t-study" aria-controls="p-study" aria-selected="true">Studio</button>
+      <button role="tab" id="t-progress" aria-controls="p-progress" aria-selected="false" tabindex="-1">Progressi</button>
+      <button role="tab" id="t-words" aria-controls="p-words" aria-selected="false" tabindex="-1">Parole</button>
+    </nav>
+  </header>
+
+  <!-- STUDIO -->
+  <section class="panel" id="p-study" role="tabpanel" aria-labelledby="t-study">
+    <div class="next" id="next">
+      <p class="label" id="stateLabel">Prossima domanda tra</p>
+      <p class="time num" id="countdown">–:––</p>
+      <div class="actions">
+        <button class="btn primary" id="askNow" type="button">Domanda adesso</button>
+        <button class="btn" id="pause" type="button">Pausa</button>
+      </div>
+    </div>
+
+    <div class="settings">
+      <div class="setting">
+        <label for="interval">Frequenza</label>
+        <div class="control">
+          <input id="interval" class="num" type="number" min="1" max="240" inputmode="numeric">
+          <span class="muted">minuti tra una domanda e l’altra</span>
+        </div>
+      </div>
+      <fieldset class="setting">
+        <legend>Sezioni</legend>
+        <div class="control">
+          <div class="chips scope" id="scope" role="group" aria-label="Sezioni da cui escono le domande"></div>
+          <p class="scope-note muted" id="scopeNote"></p>
+        </div>
+      </fieldset>
+      <fieldset class="setting">
+        <legend>Livello</legend>
+        <div class="control levels">
+          <label><input type="radio" name="level" value="auto"><span>Automatico</span></label>
+          <label><input type="radio" name="level" value="easy"><span>Facile</span></label>
+          <label><input type="radio" name="level" value="hard"><span>Difficile</span></label>
+        </div>
+      </fieldset>
+      <p class="hint muted">Automatico: scelta multipla per le parole nuove, risposta scritta quando le conosci meglio.</p>
+    </div>
+
+    <p class="today muted num" id="today"></p>
+  </section>
+
+  <!-- PROGRESSI -->
+  <section class="panel" id="p-progress" role="tabpanel" aria-labelledby="t-progress" hidden>
+    <p class="big"><strong class="num" id="learned">0</strong> <span id="ofTotal">su 0 imparate</span></p>
+    <div class="stack" id="stack" role="img" aria-label="Distribuzione delle parole"></div>
+    <ul class="legend" id="legend"></ul>
+
+    <div class="hardest" id="hardestBox" hidden>
+      <h2>Quelle che sbagli di più</h2>
+      <ul id="hardest"></ul>
+    </div>
+
+    <p class="streak muted num" id="streak"></p>
+    <button class="link reset" id="reset" type="button">Azzera progressi</button>
+  </section>
+
+  <!-- PAROLE -->
+  <section class="panel words-panel" id="p-words" role="tabpanel" aria-labelledby="t-words" hidden>
+    <div class="toolbar">
+      <div class="search-row">
+        <input id="search" type="search" placeholder="Cerca in tedesco o in italiano" aria-label="Cerca una parola" autocomplete="off" spellcheck="false">
+        <button class="btn primary" id="addToggle" type="button" aria-expanded="false" aria-controls="addForm">Aggiungi parola</button>
+      </div>
+
+      <form class="add" id="addForm" hidden autocomplete="off" novalidate>
+        <div class="field-row">
+          <div class="field narrow">
+            <label for="fArticle">Articolo</label>
+            <select id="fArticle"><option value="">nessuno</option><option>der</option><option>die</option><option>das</option></select>
+          </div>
+          <div class="field">
+            <label for="fDe">Parola in tedesco</label>
+            <input id="fDe" type="text" spellcheck="false" placeholder="es. Hütte">
+          </div>
+          <div class="field">
+            <label for="fPlural">Plurale <span class="muted">(facoltativo)</span></label>
+            <input id="fPlural" type="text" spellcheck="false" placeholder="es. Hütten">
+          </div>
+        </div>
+        <div class="field">
+          <label for="fIt">Traduzioni in italiano <span class="muted">(separate da virgola)</span></label>
+          <input id="fIt" type="text" spellcheck="false" placeholder="es. rifugio, baita">
+        </div>
+        <div class="field">
+          <label for="fCategory">Categoria</label>
+          <div class="cat-row">
+            <select id="fCategory"></select>
+            <input id="fNewCategory" type="text" maxlength="40" placeholder="Nome della nuova categoria" aria-label="Nome della nuova categoria" hidden>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fTip">Trucco per ricordarla <span class="muted">(facoltativo)</span></label>
+          <input id="fTip" type="text" placeholder="es. suona come «hut», la capanna inglese">
+        </div>
+        <p class="form-error" id="addError" role="alert"></p>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Aggiungi</button>
+          <button class="btn" id="addCancel" type="button">Annulla</button>
+        </div>
+      </form>
+
+      <div class="chips" id="chips" role="group" aria-label="Filtra per stato"></div>
+    </div>
+    <div class="list" id="list" tabindex="0" aria-label="Elenco parole"></div>
+    <p class="notice" id="notice" role="status" aria-live="polite" hidden></p>
+  </section>
+
+  <footer class="foot">
+    <span class="muted" id="count"></span>
+    <button class="btn" id="quit" type="button">Esci</button>
+  </footer>
+
+</main>
+<script src="speak.js"></script>
+<script src="control.js"></script>
+</body>
+</html>

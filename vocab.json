@@ -1,0 +1,255 @@
+{
+  "_info": "Vocaboli per Vokabel-Pop. Campi: id (unico), de (parola senza articolo), article (der/die/das o null), plural (solo la parola, senza 'die'), no_plural, extra (testo libero), it (traduzioni accettate, la prima viene mostrata), prompt_it (opzionale: come mostrare la parola in italiano), tip (trucco per ricordare), category.",
+  "words": [
+    {
+      "id": "huegel", "category": "Berge & Wandern",
+      "de": "Hügel", "article": "der", "plural": "Hügel",
+      "it": ["collina", "colle", "collinetta"],
+      "tip": "Hügel suona come l'inglese 'huge': una collina è un 'huge' (enorme) mucchio di terra. Maschile come der Berg."
+    },
+    {
+      "id": "gipfel", "category": "Berge & Wandern",
+      "de": "Gipfel", "article": "der", "plural": "Gipfel",
+      "it": ["vetta", "cima", "punta"],
+      "tip": "In Svizzera il 'Gipfeli' è il cornetto: ha la punta come una vetta! Il 'Gipfeltreffen' è il vertice tra capi di Stato: si incontrano in cima."
+    },
+    {
+      "id": "gebirge", "category": "Berge & Wandern",
+      "de": "Gebirge", "article": "das", "plural": "Gebirge",
+      "it": ["catena montuosa", "montagne", "massiccio", "catena di montagne"],
+      "tip": "Ge- + Berg (montagna) = tante montagne messe insieme, cioè una catena montuosa. 'Ge-' indica spesso un insieme. Neutro: DAS Gebirge."
+    },
+    {
+      "id": "tal", "category": "Berge & Wandern",
+      "de": "Tal", "article": "das", "plural": "Täler",
+      "it": ["valle", "vallata"],
+      "tip": "Tal ≈ inglese 'dale' (valle, come le Yorkshire Dales). E il Neandertal è la 'valle di Neander'! Al plurale prende l'Umlaut: die Täler."
+    },
+    {
+      "id": "hang", "category": "Berge & Wandern",
+      "de": "Hang", "article": "der", "plural": "Hänge",
+      "it": ["pendio", "versante", "precipizio", "declivio"],
+      "tip": "Sul pendio devi tenerti forte: 'hang on!'. Hang → pendio. Plurale con Umlaut: die Hänge."
+    },
+    {
+      "id": "felsen", "category": "Berge & Wandern",
+      "de": "Felsen", "article": "der", "plural": "Felsen",
+      "it": ["roccia", "rupe", "parete rocciosa", "masso", "roccia grande"],
+      "prompt_it": "roccia (grande, tipo parete)",
+      "tip": "Immagina di FALL-en (cadere) da una roccia enorme: der Felsen è la roccia grande, tipo parete. Der Stein invece è il sasso."
+    },
+    {
+      "id": "stein", "category": "Berge & Wandern",
+      "de": "Stein", "article": "der", "plural": "Steine",
+      "it": ["pietra", "sasso", "sassolino", "roccia piccola"],
+      "prompt_it": "pietra, sasso",
+      "tip": "Stein = inglese 'stone'. Einstein = 'una pietra', Frankenstein = 'pietra dei Franchi'!"
+    },
+    {
+      "id": "wiese", "category": "Berge & Wandern",
+      "de": "Wiese", "article": "die", "plural": "Wiesen",
+      "it": ["prato", "prato in natura", "prateria", "prato fiorito"],
+      "prompt_it": "prato (in natura)",
+      "tip": "L'Oktoberfest a Monaco si chiama 'die Wiesn' perché si fa sulla Theresienwiese, un grande prato. Wiese = il prato in natura, coi fiori."
+    },
+    {
+      "id": "rasen", "category": "Berge & Wandern",
+      "de": "Rasen", "article": "der", "plural": null,
+      "it": ["prato", "prato all'inglese", "prato in citta", "tappeto erboso", "prato del giardino"],
+      "prompt_it": "prato (in città, in giardino)",
+      "tip": "Rasen → prato RASato: l'erba tagliata corta del giardino o del parco. 'Der Rasen des Gartens' = il prato del giardino. Rasenmäher = tosaerba."
+    },
+    {
+      "id": "bergsee", "category": "Berge & Wandern",
+      "de": "Bergsee", "article": "der", "plural": "Bergseen",
+      "it": ["lago di montagna", "lago alpino", "laghetto di montagna"],
+      "tip": "Berg (montagna) + See (lago) = lago di montagna. Attenzione: der See = il lago, die See = il mare!"
+    },
+    {
+      "id": "bach", "category": "Berge & Wandern",
+      "de": "Bach", "article": "der", "plural": "Bäche",
+      "it": ["ruscello", "torrente", "fiumiciattolo", "rio"],
+      "tip": "Come il compositore Bach, il cui nome vuol dire 'ruscello'. Beethoven diceva: 'Non Bach (ruscello), Meer (mare) dovrebbe chiamarsi!'. Plurale: die Bäche."
+    },
+    {
+      "id": "fluss", "category": "Berge & Wandern",
+      "de": "Fluss", "article": "der", "plural": "Flüsse",
+      "it": ["fiume"],
+      "tip": "Fluss = FLUSSo d'acqua, quindi il fiume (inglese 'flow'). Plurale: die Flüsse."
+    },
+    {
+      "id": "wasserfall", "category": "Berge & Wandern",
+      "de": "Wasserfall", "article": "der", "plural": "Wasserfälle",
+      "it": ["cascata"],
+      "tip": "Wasser (water) + Fall (fall) = waterfall, la cascata. Plurale: die Wasserfälle."
+    },
+    {
+      "id": "gletscher", "category": "Berge & Wandern",
+      "de": "Gletscher", "article": "der", "plural": "Gletscher",
+      "it": ["ghiacciaio"],
+      "tip": "Gletscher ≈ inglese e francese 'glacier': il ghiacciaio."
+    },
+    {
+      "id": "wanderweg", "category": "Berge & Wandern",
+      "de": "Wanderweg", "article": "der", "plural": "Wanderwege",
+      "it": ["sentiero", "sentiero escursionistico"],
+      "tip": "wandern (inglese 'wander', vagare) + Weg ('way', via) = la via per camminare, cioè il sentiero."
+    },
+    {
+      "id": "pfad", "category": "Berge & Wandern",
+      "de": "Pfad", "article": "der", "plural": "Pfade",
+      "it": ["sentierino", "sentiero piccolo", "viottolo", "sentiero stretto", "sentiero piccolino"],
+      "prompt_it": "sentierino (piccolo)",
+      "tip": "Pfad ≈ inglese 'path': un sentiero piccolo e stretto. Plurale: die Pfade."
+    },
+    {
+      "id": "trampelpfad", "category": "Berge & Wandern",
+      "de": "Trampelpfad", "article": "der", "plural": "Trampelpfade",
+      "it": ["sentiero battuto", "viottolo battuto"],
+      "tip": "trampeln = calpestare (inglese 'trample', come un elefante!) + Pfad (path) = il sentiero battuto a forza di calpestarlo."
+    },
+    {
+      "id": "aussicht", "category": "Berge & Wandern",
+      "de": "Aussicht", "article": "die", "plural": "Aussichten",
+      "it": ["vista", "panorama", "veduta"],
+      "tip": "aus (fuori) + Sicht (vista, inglese 'sight') = quello che vedi là fuori, cioè il panorama. 'Was für eine Aussicht!'"
+    },
+    {
+      "id": "wanderung", "category": "Berge & Wandern",
+      "de": "Wanderung", "article": "die", "plural": "Wanderungen",
+      "it": ["camminata", "escursione", "gita a piedi", "passeggiata"],
+      "tip": "wandern (camminare in montagna) + -ung. Le parole in -ung sono SEMPRE femminili: die Wanderung, die Ausrüstung."
+    },
+    {
+      "id": "strecke", "category": "Berge & Wandern",
+      "de": "Strecke", "article": "die", "plural": "Strecken",
+      "it": ["tragitto", "percorso", "tratto", "distanza"],
+      "tip": "Strecke ≈ inglese 'stretch', come in 'a long stretch of road' (un lungo tratto di strada): il tragitto, il percorso."
+    },
+    {
+      "id": "aufstieg", "category": "Berge & Wandern",
+      "de": "Aufstieg", "article": "der", "plural": "Aufstiege",
+      "it": ["salita", "ascesa"],
+      "tip": "auf = su + steigen = salire, quindi la salita. Il contrario è der Abstieg (ab = giù)."
+    },
+    {
+      "id": "abstieg", "category": "Berge & Wandern",
+      "de": "Abstieg", "article": "der", "plural": "Abstiege",
+      "it": ["discesa"],
+      "tip": "ab = giù + steigen = salire, quindi la discesa. È maschile come Aufstieg: DER Abstieg (negli appunti c'era 'die', ma è der)."
+    },
+    {
+      "id": "pause", "category": "Berge & Wandern",
+      "de": "Pause", "article": "die", "plural": "Pausen",
+      "it": ["pausa", "sosta"],
+      "tip": "Uguale all'italiano 'pausa', e femminile come in italiano: die Pause. Plurale: die Pausen."
+    },
+    {
+      "id": "ausruestung", "category": "Berge & Wandern",
+      "de": "Ausrüstung", "article": "die", "plural": null, "no_plural": true,
+      "it": ["attrezzatura", "equipaggiamento"],
+      "tip": "Rüstung = armatura (il cavaliere 'arrugginito', rust!). L'Ausrüstung è l'armatura per l'escursione, cioè l'attrezzatura. -ung vuol dire sempre DIE. Senza plurale."
+    },
+    {
+      "id": "hoch", "category": "Aggettivi",
+      "de": "hoch", "article": null, "extra": "comparativo: höher",
+      "it": ["alto"],
+      "tip": "hoch ≈ inglese 'high'. Das Hochhaus = il grattacielo (la 'casa alta'). Al comparativo perde la c: höher."
+    },
+    {
+      "id": "nah", "category": "Aggettivi",
+      "de": "nah", "article": null,
+      "it": ["vicino"],
+      "tip": "nah ≈ inglese 'near'. Il contrario è weit (lontano)."
+    },
+    {
+      "id": "steil", "category": "Aggettivi",
+      "de": "steil", "article": null,
+      "it": ["ripido", "erto", "scosceso"],
+      "tip": "steil ≈ inglese 'steep': ripido. Cominciano tutti e due con 'ste-'. Il contrario è flach."
+    },
+    {
+      "id": "flach", "category": "Aggettivi",
+      "de": "flach", "article": null,
+      "it": ["pianeggiante", "piatto", "in piano", "piano"],
+      "tip": "flach ≈ inglese 'flat': piatto, in piano. Il contrario è steil (ripido)."
+    },
+    {
+      "id": "lang", "category": "Aggettivi",
+      "de": "lang", "article": null,
+      "it": ["lungo"],
+      "tip": "lang = inglese 'long' = lungo. Questa è facile!"
+    },
+    {
+      "id": "weit", "category": "Aggettivi",
+      "de": "weit", "article": null,
+      "it": ["lontano", "distante", "ampio", "largo"],
+      "prompt_it": "lontano, distante",
+      "tip": "weit ≈ inglese 'wide' (ampio, esteso). 'Wie weit ist es?' = Quanto è lontano? Il contrario è nah."
+    },
+    {
+      "id": "anstrengend", "category": "Aggettivi",
+      "de": "anstrengend", "article": null,
+      "it": ["faticoso", "duro", "tosto", "impegnativo", "stancante"],
+      "prompt_it": "faticoso, duro",
+      "tip": "Dentro c'è 'streng' (severo, inglese 'strength'/'strain'): ti sforzi tanto, quindi è faticoso. sich anstrengen = sforzarsi."
+    },
+    {
+      "id": "leicht", "category": "Aggettivi",
+      "de": "leicht", "article": null,
+      "it": ["facile", "leggero", "semplice"],
+      "tip": "leicht ≈ inglese 'light' (leggero): una cosa leggera è facile da portare. Vuol dire sia facile sia leggero."
+    },
+    {
+      "id": "schwierig", "category": "Aggettivi",
+      "de": "schwierig", "article": null,
+      "it": ["difficile", "complicato"],
+      "tip": "Viene da 'schwer' (pesante): una cosa pesante è difficile. Immagina di sbuffare 'schwierig!' sotto uno zaino pesantissimo."
+    },
+    {
+      "id": "gefaehrlich", "category": "Aggettivi",
+      "de": "gefährlich", "article": null,
+      "it": ["pericoloso", "rischioso"],
+      "tip": "die Gefahr = il pericolo (parente dell'inglese 'fear', paura). Gefahr + -lich = pericoloso. 'Achtung, Gefahr!'"
+    },
+    {
+      "id": "sicher", "category": "Aggettivi",
+      "de": "sicher", "article": null,
+      "it": ["sicuro", "certo"],
+      "tip": "sicher ≈ italiano 'sicuro' (dal latino 'securus'). 'Sicher!' vuol dire anche 'Certo!'."
+    },
+    {
+      "id": "ruhig", "category": "Aggettivi",
+      "de": "ruhig", "article": null,
+      "it": ["calmo", "tranquillo", "quieto", "silenzioso"],
+      "tip": "die Ruhe = la calma, il silenzio. 'Ruhe, bitte!' = Silenzio, per favore! Quindi ruhig = calmo, tranquillo."
+    },
+    {
+      "id": "beeindruckend", "category": "Aggettivi",
+      "de": "beeindruckend", "article": null,
+      "it": ["impressionante", "notevole", "spettacolare"],
+      "tip": "der Eindruck = l'impressione (ein = dentro + Druck = pressione, come Drucker = stampante: qualcosa che ti si 'stampa' dentro). Quindi beeindruckend = impressionante."
+    },
+    {
+      "id": "quatsch", "category": "Extra",
+      "de": "Quatsch", "article": "der", "plural": null,
+      "it": ["sciocchezza", "sciocchezze", "stupidaggine", "stupidaggini", "scemenza", "assurdita"],
+      "prompt_it": "sciocchezza",
+      "tip": "'Quatsch!' suona come un pomodoro spiaccicato (squash!): una sciocchezza. 'So ein Quatsch!' = Che sciocchezza!"
+    },
+    {
+      "id": "schwachsinn", "category": "Extra",
+      "de": "Schwachsinn", "article": "der", "plural": null,
+      "it": ["sciocchezza", "sciocchezze", "stupidaggine", "stupidaggini", "scemenza", "idiozia", "assurdita"],
+      "prompt_it": "stupidaggine, idiozia",
+      "tip": "schwach = debole + Sinn = senso (inglese 'sense'). Una cosa con 'poco senso' è una stupidaggine."
+    },
+    {
+      "id": "quatschen", "category": "Extra",
+      "de": "quatschen", "article": null,
+      "it": ["chiacchierare", "chiacchierare di sciocchezze", "dire sciocchezze", "blaterare", "cianciare"],
+      "prompt_it": "chiacchierare (di sciocchezze)",
+      "tip": "Viene da Quatsch: chiacchierare di sciocchezze. Suona come le anatre che fanno 'quack quack' tutto il giorno."
+    }
+  ]
+}
