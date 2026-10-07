@@ -44,13 +44,3 @@ jobs:
           path: dist/Vokabel-Pop.exe
           if-no-files-found: error
           retention-days: 30
-
-5. Premi Commit changes (in basso).
-
-Cosa succede dopo
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Vokabel-Pop-exe
-          path: dist/Vokabel-Pop.exe
-          if-no-files-found: error
-          retention-days: 30
